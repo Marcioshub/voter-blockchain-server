@@ -53,7 +53,11 @@ router.post("/vote", (req, res) => {
     // add vote to blockchain
     if (blockchain.addVote(req.body)) {
       res.status(200).json({
-        message: "you voted!"
+        message: "you voted!",
+        hash: blockchain.chain[blockchain.chain.length - 1].hash,
+        vote: vote,
+        prev_hash: blockchain.chain[blockchain.chain.length - 1].prev_hash,
+        blockIndex: blockchain.chain.length - 1
       });
     } else {
       res.status(400).json({

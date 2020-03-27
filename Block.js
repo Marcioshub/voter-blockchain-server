@@ -11,7 +11,7 @@ class Block {
   // only for the first block
   static GENESIS_BLOCK() {
     return {
-      id: "GENESIS",
+      hash: "GENESIS",
       vote: "GENESIS",
       prev_hash: "GENESIS"
     };
@@ -29,7 +29,7 @@ class Block {
     );
 
     return {
-      id: hash.digest("hex"),
+      hash: hash.digest("hex"),
       vote: this.vote,
       prev_hash: this.prev_hash
     };

@@ -18,7 +18,7 @@ class Blockchain {
       blk.id,
       blk.vote,
       blk.secret,
-      this.chain[this.chain.length - 1].id
+      this.chain[this.chain.length - 1].hash
     );
 
     const hash = crypto.createHash("sha256");
